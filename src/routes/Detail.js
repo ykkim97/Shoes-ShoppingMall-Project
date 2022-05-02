@@ -5,6 +5,21 @@ import "./Detail.css";
 import { Nav } from "react-bootstrap";
 import Footer from "../components/Footer";
 import TabContent from "../components/TabContent";
+import styled from "styled-components";
+
+// styled-components 연습
+const Btn = styled.button`
+    background : ${ props => props.bg };
+    color : black;
+    padding : 10px;
+    border-radius : 5px
+`
+
+const GreyBox = styled.div`
+    background : grey;
+    padding : 20px;
+    text-align : center;
+`
 
 function Detail({popularShoes,setPopularShoes}) {
     const [tabs, setTabs] = useState(0);
@@ -22,6 +37,10 @@ function Detail({popularShoes,setPopularShoes}) {
     return (
         <>
             <MainNavbar />
+            <GreyBox>
+                <h3>신규 고객 대상 30% 할인 쿠폰 증정</h3>
+                <Btn bg="yellow">쿠폰발급받기</Btn>
+            </GreyBox>
             <h1 className="red">상품 정보</h1>
 
             <div className="container">
