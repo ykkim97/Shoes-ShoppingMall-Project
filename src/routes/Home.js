@@ -5,9 +5,18 @@ import MainPopularItem from "../components/MainPopularItem";
 import Footer from "../components/Footer";
 import {Button} from "react-bootstrap";
 import "./Home.css";
+import axios from "axios";
 
 function Home({popularShoes,setPopularShoes}) {
-
+    const anotherDataRequest = () => {
+        axios.get(`https://younggwons.github.io/item/anotherItem.json`)
+        .then((result) => {
+            setPopularShoes([...popularShoes, ...result.data]);
+        })
+        .catch(() => {
+            console.log("요청 실패")
+        })
+    }
     return (
         <div>
 
@@ -29,7 +38,7 @@ function Home({popularShoes,setPopularShoes}) {
             </div>
 
             <div className="another-item">
-                <Button variant="primary" onClick={() => {}}>다른 상품보기</Button>{' '}
+                <Button variant="primary" onClick={anotherDataRequest}>다른 상품보기</Button>{' '}
                 <ul></ul>
             </div>
 
