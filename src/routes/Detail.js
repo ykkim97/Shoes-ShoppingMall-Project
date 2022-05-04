@@ -6,6 +6,7 @@ import { Nav } from "react-bootstrap";
 import Footer from "../components/Footer";
 import TabContent from "../components/TabContent";
 import styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
 
 // styled-components 연습
 const Btn = styled.button`
@@ -29,6 +30,13 @@ function Detail({popularShoes,setPopularShoes}) {
     let { id } = useParams();
     let findItem = popularShoes.find(item => item.id == id);
     
+    const basketState = useSelector(state => state.basketReducer);
+    const dispatch = useDispatch();
+    const addBasket = () => {
+        dispatch({type : "항목추가", payload : {id : findItem.id, name : findItem.title, quan : 1}});
+        alert('장바구니에 상품이 담겼습니다.')
+    }
+
     useEffect(() => {
         const timer = setTimeout(() => setIsAlert(false),3000);
         return () => clearTimeout(timer);
@@ -46,14 +54,20 @@ function Detail({popularShoes,setPopularShoes}) {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12 detailInfo">
-                        <img src={`https://raw.githubusercontent.com/ykkim97/ShoesData/main/popular-item/shoes${findItem.id}.jpg`} width="100%" />
+                        <img src={`https://raw.githubusercontent.com/younggwons/younggwons.github.io/master/item/shoes${findItem.id}.jpg`} width="100%" />
                     </div>
                     <div className="col-md-12 detailInfo">
                         <h4 className="pt-5">{findItem.title}</h4>
                         <p>{findItem.content}</p>
                         <p>{findItem.price}</p>
 
-                        <button className="btn btn-danger">주문하기</button> 
+                        <button className="btn btn-primary"
+                            onClick={addBasket}
+                        >장바구니담기</button>
+                        <button className="btn btn-primary"
+                            onClick={() => navigate('/cart')}
+                        >장바구니로</button>
+                        <button className="btn btn-success">바로구매</button> 
                         <button className="btn btn-danger" onClick={() => navigate(-1)}>뒤로가기</button> 
                     </div>
                 </div>

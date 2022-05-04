@@ -5,13 +5,14 @@ import Detail from './routes/Detail';
 import Cart from './routes/Cart';
 import popularData from './components/popularData';
 import './App.css';
-
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [popularShoes, setPopularShoes] = useState(popularData);
   return (
     <div className="App">
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route exact path='/' element={<Home popularShoes={popularShoes} setPopularShoes={setPopularShoes} />}></Route>
           <Route exact path='/detail/:id' element={<Detail popularShoes={popularShoes} setPopularShoes={setPopularShoes}/>}></Route>

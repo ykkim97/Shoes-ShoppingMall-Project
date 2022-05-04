@@ -1,0 +1,80 @@
+.shopping-basket {
+    margin: 30px;
+    text-align: center;
+}
+
+.basket-table {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    
+}
+
+.basket-table-head {
+    background: rgb(75, 74, 74);
+    color: white;
+}
+
+.basket-table-head th{
+    text-align: center;
+}
+
+.basket-table-body {
+    text-align: center;
+}
+
+.quan-change-btn button {
+    width: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.quan-change-btn button:nth-child(1) {
+    background: rgb(151, 206, 151);
+}
+.quan-change-btn button:nth-child(2) {
+    background: rgb(214, 185, 89);
+}
+
+.shopping-basket-alert {
+    text-align: center;
+    background: rgb(236, 234, 122);
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 30px;
+}
+
+.shopping-basket-alert p {
+    font-size: 25px;
+}
+
+.shopping-basket-alert button {
+    background: white;
+    border-radius: 5px;
+    border: 1px solid black
+}
+
+.shopping-basket-alert button:hover {
+    background-color: rgb(211, 71, 28);
+    color: white;
+}
+
+.payment {
+    margin: 30px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.payment button {
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}

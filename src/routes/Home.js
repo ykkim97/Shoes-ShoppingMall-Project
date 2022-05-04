@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MainCarousel from "../components/MainCarousel";
 import MainNavbar from "../components/MainNavbar";
 import MainPopularItem from "../components/MainPopularItem";
@@ -8,6 +8,7 @@ import "./Home.css";
 import axios from "axios";
 
 function Home({popularShoes,setPopularShoes}) {
+    //신발데이터 요청
     const anotherDataRequest = () => {
         axios.get(`https://younggwons.github.io/item/anotherItem.json`)
         .then((result) => {
@@ -25,7 +26,7 @@ function Home({popularShoes,setPopularShoes}) {
             <MainCarousel />
 
             <div className="popular-item">
-                <h3>인기 상품</h3>
+                <h3 className="popular-title">인기 상품</h3>
                 <div className="container">
                     <div className="row popular-list">
                         {popularShoes.map((shoes, idx) => {

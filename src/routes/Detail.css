@@ -9,6 +9,8 @@
     text-align: center;
 }
 
+.btn-primary,
+.btn-success,
 .btn-danger {
     margin-left: 7px;
     margin-right: 7px;

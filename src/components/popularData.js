@@ -19,5 +19,6 @@ export default [
         title : "Converse HT Red",
         content : "Born in US",
         price : 130000
-    }
+    },
+    
 ] 
