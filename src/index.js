@@ -5,6 +5,7 @@ import App from './App';
 import { Provider } from 'react-redux';
 import { combineReducers,createStore } from 'redux';
 
+// 장바구니 알림 reducer
 const basketAlertReducer = (state=true, action) => {
   if (action.type === "닫기") {
     return state = false;
@@ -17,7 +18,7 @@ const basketItemInfo = [
   { id : 0, name : 'Brown Stone', quan : 0},
 ];
 
-
+// 장바구니 reducer
 const basketReducer = (state = basketItemInfo,action) => {
   switch (action.type) {
     case "항목추가":
@@ -44,6 +45,7 @@ const basketReducer = (state = basketItemInfo,action) => {
   }
 };
 
+// 스토어
 const store = createStore(combineReducers({basketReducer,basketAlertReducer}));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

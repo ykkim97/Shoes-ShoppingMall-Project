@@ -1,3 +1,5 @@
+// 상품 상세 정보 Page(상품별 정보)
+
 import React,{useEffect, useState} from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import MainNavbar from "../components/MainNavbar";

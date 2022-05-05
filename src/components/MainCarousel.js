@@ -2,6 +2,7 @@ import React from "react";
 import { Carousel } from "react-bootstrap";
 import "./MainCarousel.css";
 
+// 메인홈 슬라이드
 function MainCarousel() {
     return (
         <div>

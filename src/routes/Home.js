@@ -1,3 +1,5 @@
+// 메인 홈 화면
+
 import React, { useState } from "react";
 import MainCarousel from "../components/MainCarousel";
 import MainNavbar from "../components/MainNavbar";

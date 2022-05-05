@@ -18,7 +18,7 @@ const ShoesPrice = styled.p`
     font-size : 15px;
     color : grey;
 `
-
+// 인기상품 컴포넌트
 function MainPopularItem({shoes, idx}) {
     const navigate = useNavigate();
     return (

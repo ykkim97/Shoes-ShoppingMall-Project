@@ -1,6 +1,7 @@
 import React from "react";
 import "./ShipInfo.css";
 
+//배송/교환/반품 안내 탭
 function ShipInfo() {
     return (
         <div className="shipInfo-div">

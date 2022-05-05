@@ -1,6 +1,7 @@
 import React from "react";
 import "./DetailTab.css"
 
+// 상품 상세 탭
 function DetailTab() {
     return (
         <div className="detailtab-div">
