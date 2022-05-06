@@ -10,7 +10,7 @@ import TabContent from "../components/TabContent";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 
-// styled-components 연습
+// styled-components
 const Btn = styled.button`
     background : ${ props => props.bg };
     color : black;
