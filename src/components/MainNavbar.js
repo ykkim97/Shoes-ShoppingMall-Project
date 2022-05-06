@@ -30,7 +30,7 @@ function MainNavbar() {
                 </Nav>
                 <Nav>
                     <Nav.Link as={Link} to="/cart">장바구니</Nav.Link>
-                    <Nav.Link eventKey={2} href="#memes">
+                    <Nav.Link as={Link} to="/mypage">
                     마이페이지
                     </Nav.Link>
                 </Nav>

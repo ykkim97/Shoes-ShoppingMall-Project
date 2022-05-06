@@ -1,0 +1,18 @@
+.mypage-title {
+    text-align: center;
+    margin: 20px;
+    font-weight: 600;
+}
+
+.order-check-title {
+    padding: 10px;
+}
+
+.order-check-item {
+    display: flex;
+}
+
+.myshopping-title {
+    padding: 10px;
+    
+}
