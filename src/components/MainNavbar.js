@@ -13,7 +13,6 @@ function MainNavbar() {
                 <Navbar.Collapse id="responsive-navbar-nav">  
                 <Nav className="me-auto">
                     <Nav.Link as={Link} to="/">홈</Nav.Link>
-                    <Nav.Link href="#pricing">운동화</Nav.Link>
                     <NavDropdown title="남성신발" id="collasible-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">운동화/스니커즈/캐주얼</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">구두</NavDropdown.Item>
