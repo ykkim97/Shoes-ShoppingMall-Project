@@ -32,6 +32,7 @@ function MainNavbar() {
                     <Nav.Link as={Link} to="/mypage">
                     마이페이지
                     </Nav.Link>
+                    <Nav.Link as={Link} to="/auth">로그인</Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
                 </Container>
