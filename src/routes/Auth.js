@@ -1,6 +1,6 @@
 // 회원가입, 로그인 컴포넌트
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { 
     createUserWithEmailAndPassword,
     onAuthStateChanged,
@@ -20,10 +20,12 @@ function Auth() {
     const [loginPassword, setLoginPassword] = useState("");
     const [user, setUser] = useState({});
 
-    onAuthStateChanged(auth, (currentUser) => {
-        setUser(currentUser);
+    useEffect(() => {
+        onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+        })
     })
-
+    
     // 회원가입 함수
     const signup = async () => {
         try {
