@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
+import styles from "./SignUp.module.css";
 
 function SignUp () {
     const [registerEmail, setRegisterEmail] = useState("");
@@ -23,25 +24,31 @@ function SignUp () {
     return (
         <div>
             {/* 회원가입 */}
-            <div>
+            <div className={styles.signUpForm}>
                 <h3>회원가입</h3>
-                <label>ID</label>
+                <label htmlFor="email">Email</label>
                 <input 
-                    type="text" 
+                    type="text"
+                    id="email"
                     name="email" 
                     placeholder="Email..."
                     onChange={(e) => {
                         setRegisterEmail(e.target.value);
-                    }} />
-                <label>PASSWORD</label>
+                    }}
+                    className={styles.signUpEmailInput}
+                />
+                <label htmlFor="password">Password</label>
                 <input 
                     type="password" 
+                    id="password"
                     name="password" 
                     placeholder="Password..."
                     onChange={(e) => {
                         setRegisterPassword(e.target.value);
-                    }} />
-                <button onClick={signup}>회원가입</button>
+                    }} 
+                    className={styles.signUpPasswordInput}
+                />
+                <button onClick={signup} className={styles.signUpBtn}>완료</button>
             </div>
         </div>
     )

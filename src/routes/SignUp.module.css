@@ -1,0 +1,37 @@
+
+
+.signUpForm {
+    width: 100%;
+    height: 400px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 80px;
+    background-color: #e2dfdf;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 100px;
+}
+
+.signUpForm h3 {
+    text-align: center;
+}
+
+
+.signUpEmailInput{
+    margin-bottom: 10px;
+    height: 40px;
+    padding: 10px;    
+}
+
+.signUpPasswordInput {
+    margin-bottom: 10px;
+    height: 40px;
+    padding: 10px;
+}
+
+.signUpBtn {
+    margin-top: 10px;
+    height: 50px;
+}
