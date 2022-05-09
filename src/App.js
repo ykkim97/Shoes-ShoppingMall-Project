@@ -10,6 +10,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Category from './routes/Category';
 import { auth } from './firebase';
 import Auth from './routes/Auth';
+import SignUp from './routes/SignUp';
 
 function App() {
   const [popularShoes, setPopularShoes] = useState(popularData);
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Home popularShoes={popularShoes} setPopularShoes={setPopularShoes} />}></Route>
           <Route exact path='/auth' element={<Auth />}></Route>
+          <Route exact path='/auth/signup' element={<SignUp />}></Route>
           <Route exact path='/detail/:id' element={<Detail popularShoes={popularShoes} setPopularShoes={setPopularShoes}/>}></Route>
           <Route exact path='/cart' element={<Cart />}></Route>
           <Route exact path='/mypage' element={<MyPage />}></Route>
