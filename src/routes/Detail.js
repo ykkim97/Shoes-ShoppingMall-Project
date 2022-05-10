@@ -58,26 +58,26 @@ function Detail({popularShoes,setPopularShoes}) {
                     <div className="col-md-12 detailInfo">
                         <img src={`https://raw.githubusercontent.com/younggwons/younggwons.github.io/master/item/shoes${findItem.id}.jpg`} width="100%" />
                     </div>
-                    <div className="col-md-12 detailInfo">
+                    <div className="col-md-12" id={styles.detailInfo}>
                         <h4 className="pt-5">{findItem.title}</h4>
                         <p>{findItem.content}</p>
                         <p>{findItem.price}</p>
 
-                        <button className="btn btn-primary"
+                        <button className="btn btn-primary" id={styles.putIn}
                             onClick={addBasket}
                         >장바구니담기</button>
-                        <button className="btn btn-primary"
+                        <button className="btn btn-primary" id={styles.goBasket}
                             onClick={() => navigate('/cart')}
                         >장바구니로</button>
-                        <button className="btn btn-success">바로구매</button> 
-                        <button className="btn btn-danger" onClick={() => navigate(-1)}>뒤로가기</button> 
+                        <button className="btn btn-success" id={styles.goPurchase}>바로구매</button> 
+                        <button className="btn btn-danger" id={styles.goBack} onClick={() => navigate(-1)}>뒤로가기</button> 
                     </div>
                 </div>
 
                 {
                     isAlert === true 
                     ? (
-                        (<div className="salesAlert">
+                        (<div className={styles.salesAlert}>
                             <p>🔴 품절임박 : 재고가 얼마남지 않았습니다. 🔴</p>
                         </div>)
                     ) : null
@@ -97,8 +97,6 @@ function Detail({popularShoes,setPopularShoes}) {
                 
                 <TabContent tabs={tabs} />
             </div> 
-
-            
 
             <Footer />
         </>

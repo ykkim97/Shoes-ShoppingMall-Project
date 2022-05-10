@@ -1,10 +1,11 @@
 import React from "react";
-import "./Footer.css";
+import styles from "./Footer.module.css";
+
 
 // Footer Part
 function Footer() {
     return (
-        <div className="footer">
+        <div className={styles["footer"]}>
             <div className="footer-info">
                 <h3>카페슈 CafeShoe</h3>
                 <p>제작 : younggwon Kim</p>

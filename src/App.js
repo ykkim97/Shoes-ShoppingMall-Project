@@ -7,7 +7,6 @@ import MyPage from './routes/MyPage'
 import popularData from './components/popularData';
 import './App.css';
 import ScrollToTop from "./components/ScrollToTop";
-import Category from './routes/Category';
 import { auth } from './firebase';
 import Auth from './routes/Auth';
 import SignUp from './routes/SignUp';
@@ -33,7 +32,6 @@ function App() {
           <Route exact path='/detail/:id' element={<Detail popularShoes={popularShoes} setPopularShoes={setPopularShoes}/>}></Route>
           <Route exact path='/cart' element={<Cart />}></Route>
           <Route exact path='/mypage' element={<MyPage />}></Route>
-          <Route exact path='/category' element={<Category />}></Route>
           <Route path='*' element={<div><img src='/img/404error.jpg'></img></div>}></Route>
         </Routes>
       </Router>

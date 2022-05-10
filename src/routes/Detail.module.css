@@ -5,13 +5,14 @@
     margin-bottom: 30px;
 }
 
-.detailInfo {
+#detailInfo {
     text-align: center;
 }
 
-.btn-primary,
-.btn-success,
-.btn-danger {
+#putIn,
+#goBasket,
+#goPurchase,
+#goBack {
     margin-left: 7px;
     margin-right: 7px;
 }

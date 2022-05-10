@@ -1,12 +1,12 @@
 import React from "react";
-import "./DetailTab.css"
+import styles from "./DetailTab.module.css";
 
 // 상품 상세 탭
 function DetailTab() {
     return (
-        <div className="detailtab-div">
-            <h5 className="detailtab-title">필수 표기 정보</h5>
-            <table className="table-frame">
+        <div className={styles["detailtab-div"]}>
+            <h5 className={styles["detailtab-title"]}>필수 표기 정보</h5>
+            <table className={styles["table-frame"]}>
                 <colgroup>
                     <col width="25%" />
                     <col width="25%" />

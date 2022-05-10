@@ -1,12 +1,12 @@
 import React from "react";
-import "./ShipInfo.css";
+import styles from "./ShipInfo.module.css";
 
 //배송/교환/반품 안내 탭
 function ShipInfo() {
     return (
-        <div className="shipInfo-div">
-            <h5 className="shipInfo-title">배송정보</h5>
-            <table className="table-frame">
+        <div className={styles["shipInfo-div"]}>
+            <h5 className={styles["shipInfo-title"]}>배송정보</h5>
+            <table className={styles["table-frame"]}>
                 <colgroup>
                     <col width="15%" />
                     <col width="35%" />
@@ -39,9 +39,9 @@ function ShipInfo() {
                 </tr>
             </table>
             
-            <div className="exchange-div">
-                <h5 className="exchange-title">교환/반품 안내</h5>
-                <table className="table-frame">
+            <div className={styles["exchange-div"]}>
+                <h5 className={styles["exchange-title"]}>교환/반품 안내</h5>
+                <table className={styles["table-frame"]}>
                     <colgroup>
                         <col width="20%" />
                         <col width="80%" />
