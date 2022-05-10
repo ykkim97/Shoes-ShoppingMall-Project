@@ -11,14 +11,11 @@ import { auth } from "../firebase";
 import styles from "./Auth.module.css";
 import { useNavigate } from "react-router-dom";
 
-function Auth({user, setUser}) {
+function Auth({user, setUser, isLogged, setIsLogged}) {
 
     // 로그인 email, pw
     const [loginEmail, setLoginEmail] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
-    
-    // 로그인성공여부를 나타내는 state
-    const [isLogged, setIsLogged] = useState(false);
 
     const navigate = useNavigate();
     
@@ -36,12 +33,15 @@ function Auth({user, setUser}) {
                 loginEmail,
                 loginPassword
             );
-            // 로그인 성공시 true로
-            setIsLogged(true);
+            
             // true일 경우 페이지 전환
             if (isLogged === true) {
                 navigate(`/`);
             }
+            // 로그인 성공시 true로
+            setIsLogged(true);
+            console.log(isLogged);
+            
         } catch (error) {
             console.log(error.message);
             alert("이메일 혹은 비밀번호가 틀립니다.");
@@ -50,6 +50,8 @@ function Auth({user, setUser}) {
     // 로그아웃 함수
     const signout = async () => {
         await signOut(auth);
+        setIsLogged(false)
+        console.log(isLogged);
     }
 
     return (

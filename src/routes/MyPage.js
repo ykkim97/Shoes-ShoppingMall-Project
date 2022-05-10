@@ -1,7 +1,7 @@
 import React from "react";
 import MainNavbar from "../components/MainNavbar";
 import styled from "styled-components"
-import "./MyPage.css"
+import styles from "./MyPage.module.css";
 
 const Bar = styled.div`
     background : #cfcccc;
@@ -28,10 +28,10 @@ function MyPage() {
     return (
         <>
             <MainNavbar />
-            <h3 className="mypage-title">마이 페이지</h3>
+            <h3 className={styles.mypageTitle}>마이 페이지</h3>
             <Bar maxWidth={"150px"}>
-                <h5 className="order-check-title">주문/배송조회</h5>
-                <ul className="order-check-item">
+                <h5 className={styles.orderCheckTitle}>주문/배송조회</h5>
+                <ul className={styles.orderCheckItem}>
                     <Item>입금/결제</Item>
                     <Item>배송중</Item>
                     <Item>배송완료</Item>
@@ -40,7 +40,7 @@ function MyPage() {
                 </ul>
             </Bar>
             <Bar maxWidth={"600px"}>
-                <h5 className="myshopping-title">나의 쇼핑 활동</h5>
+                <h5 className={styles.myShoppingTitle}>나의 쇼핑 활동</h5>
                 <ul>
                     <Item>장바구니</Item>
                     <Item>주문내역조회</Item>

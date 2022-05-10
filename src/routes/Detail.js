@@ -3,7 +3,7 @@
 import React,{useEffect, useState} from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import MainNavbar from "../components/MainNavbar";
-import "./Detail.css";
+import styles from "./Detail.module.css"
 import { Nav } from "react-bootstrap";
 import Footer from "../components/Footer";
 import TabContent from "../components/TabContent";
@@ -51,7 +51,7 @@ function Detail({popularShoes,setPopularShoes}) {
                 <h3>신규 고객 대상 30% 할인 쿠폰 증정</h3>
                 <Btn bg="yellow">쿠폰발급받기</Btn>
             </GreyBox>
-            <h1 className="red">상품 정보</h1>
+            <h1 className={styles.detailInfoTitle}>상품 정보</h1>
 
             <div className="container">
                 <div className="row">

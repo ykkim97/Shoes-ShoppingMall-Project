@@ -1,17 +1,17 @@
-.mypage-title {
+.mypageTitle {
     text-align: center;
     margin: 20px;
     font-weight: 600;
 }
 
-.order-check-title {
+.orderCheckTitle {
     padding: 10px;
 }
 
-.order-check-item {
+.orderCheckItem {
     display: flex;
 }
 
-.myshopping-title {
+.myShoppingTitle {
     padding: 10px;
 }

@@ -4,7 +4,7 @@ import React from "react";
 import MainNavbar from "../components/MainNavbar";
 import {Table,Button} from "react-bootstrap";
 import Footer from "../components/Footer";
-import "./Cart.css";
+import styles from "./Cart.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -17,9 +17,9 @@ function Cart(props) {
     return (
         <div>
             <MainNavbar />
-            <h1 className="shopping-basket">장바구니</h1>
-            <Table className="basket-table" striped bordered hover>
-                <thead className="basket-table-head">
+            <h1 className={styles.shoppingBasket}>장바구니</h1>
+            <Table className={styles.basketTable} striped bordered hover>
+                <thead className={styles.basketTableHead}>
                     <tr>
                         <th>상품 ID</th>
                         <th>상품명</th>
@@ -27,14 +27,14 @@ function Cart(props) {
                         <th>변경</th>
                     </tr>
                 </thead>
-                <tbody className="basket-table-body">
+                <tbody className={styles.basketTableBody}>
                     {state.map((item, idx) => {
                         return (
                             <tr key={idx}>
                                 <td>{item.id}</td>
                                 <td>{item.name}</td>
                                 <td>{item.quan}</td>
-                                <td className="quan-change-btn">
+                                <td className={styles.quanChangeBtn}>
                                     <button 
                                         onClick={() => {
                                             dispatch({type : "수량증가", id : item.id})
@@ -54,7 +54,7 @@ function Cart(props) {
             
             {
                 alertState === true ? 
-                (<div className="shopping-basket-alert">
+                (<div className={styles.shoppingBasketAlert}>
                     <p>신규 고객 첫 구매 시 30% 할인! </p>
                     <button onClick={() => {
                         dispatch({type : "닫기"})
@@ -62,7 +62,7 @@ function Cart(props) {
                 </div>) : null
             }
 
-            <div className="payment">
+            <div className={styles.payment}>
                 <Button variant="success">결제하기</Button>
                 <Button variant="warning" onClick={() => {navigate(-1)}}>뒤로가기</Button>
             </div>

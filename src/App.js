@@ -15,14 +15,20 @@ import SignUp from './routes/SignUp';
 function App() {
   const [popularShoes, setPopularShoes] = useState(popularData);
   const [user, setUser] = useState({});
-
+  const [isLogged, setIsLogged] = useState(false);
+  
   return (
     <div className="App">
       <Router>
         <ScrollToTop />
         <Routes>
           <Route exact path='/' element={<Home popularShoes={popularShoes} setPopularShoes={setPopularShoes} />}></Route>
-          <Route exact path='/auth' element={<Auth user={user} setUser={setUser}/>}></Route>
+          <Route exact path='/auth' element={<Auth 
+            user={user} 
+            setUser={setUser}
+            isLogged={isLogged}
+            setIsLogged={setIsLogged}
+          />}></Route>
           <Route exact path='/auth/signup' element={<SignUp />}></Route>
           <Route exact path='/detail/:id' element={<Detail popularShoes={popularShoes} setPopularShoes={setPopularShoes}/>}></Route>
           <Route exact path='/cart' element={<Cart />}></Route>
