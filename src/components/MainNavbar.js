@@ -40,9 +40,7 @@ function MainNavbar({isLogged, setIsLogged}) {
                 </Nav>
                 <Nav>
                     <Nav.Link as={Link} to="/cart">장바구니</Nav.Link>
-                    <Nav.Link as={Link} to="/mypage">
-                    마이페이지
-                    </Nav.Link>
+                    {isLogged && <Nav.Link as={Link} to="/mypage">마이페이지</Nav.Link>}
                     {/* 로그인 */}
                     {!isLogged && <Nav.Link as={Link} to="/auth">로그인</Nav.Link>}
                     {/* 로그아웃 */}
