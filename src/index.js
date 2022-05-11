@@ -22,14 +22,18 @@ const basketItemInfo = [
 const basketReducer = (state = basketItemInfo,action) => {
   switch (action.type) {
     case "항목추가":
-      let basket = [...state];
-      let found = state.findIndex((item) => item.id === action.payload.id);
-      if (found >= 0) {
-        basket[found].quan++;
+      let addBasket = [...state];
+      let addFound = state.findIndex((item) => item.id === action.payload.id);
+      if (addFound >= 0) {
+        addBasket[addFound].quan++;
       } else {
-        basket.push(action.payload);
+        addBasket.push(action.payload);
       }
-      return basket;
+      return addBasket;
+    case "항목삭제" : 
+      let deleteBasket = [...state];
+      deleteBasket.pop(action.payload);
+      return deleteBasket;
     case "수량증가" :
       let addCopy = [...state];
       let addIndex = addCopy.findIndex((item) => { return item.id === action.id })
@@ -40,6 +44,7 @@ const basketReducer = (state = basketItemInfo,action) => {
       let minusIndex = minusCopy.findIndex((item) => { return item.id === action.id })
       minusCopy[minusIndex].quan--;
       return minusCopy;
+    
     default :
       return state;
   }

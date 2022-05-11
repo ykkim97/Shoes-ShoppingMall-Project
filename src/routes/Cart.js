@@ -8,12 +8,14 @@ import styles from "./Cart.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
+
 function Cart(props) {
     const state = useSelector((state) => state.basketReducer);
     const alertState = useSelector((state) => state.basketAlertReducer);
     const navigate = useNavigate();
     const dispatch = useDispatch();
     console.log(state);
+
     return (
         <div>
             <MainNavbar />
@@ -42,9 +44,15 @@ function Cart(props) {
                                     }>+</button>
                                     <button 
                                         onClick={() => {
-                                            dispatch({type : "수량감소", id : item.id})
+                                            if (item.quan > 0) dispatch({type : "수량감소", id : item.id});
                                         }
                                     }>-</button>
+                                    <button 
+                                        onClick={() => {
+                                             dispatch({type : "항목삭제"});
+                                             alert('상품이 삭제되었습니다.')
+                                        }
+                                    }>삭제</button>
                                 </td>
                             </tr>
                         )

@@ -10,11 +10,14 @@ import axios from "axios";
 import styles from "./Home.module.css";
 
 function Home({popularShoes,setPopularShoes}) {
+    const [visible, setVisible] = useState(true);
+
     //신발데이터 요청
     const anotherDataRequest = () => {
         axios.get(`https://younggwons.github.io/item/anotherItem.json`)
         .then((result) => {
             setPopularShoes([...popularShoes, ...result.data]);
+            setVisible(false)
         })
         .catch(() => {
             console.log("요청 실패")
@@ -40,10 +43,13 @@ function Home({popularShoes,setPopularShoes}) {
                 </div>
             </div>
 
-            <div className={styles["another-item"]}>
-                <Button variant="primary" onClick={anotherDataRequest}>다른 상품보기</Button>{' '}
-                <ul></ul>
-            </div>
+            {
+                visible && 
+                (<div className={styles["another-item"]}>
+                    <Button variant="primary" onClick={anotherDataRequest}>다른 상품보기</Button>{' '}
+                    <ul></ul>
+                </div>)
+            }
 
             <Footer />
 
