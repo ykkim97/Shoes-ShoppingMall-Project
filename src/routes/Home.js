@@ -9,9 +9,7 @@ import {Button} from "react-bootstrap";
 import axios from "axios";
 import styles from "./Home.module.css";
 
-function Home({popularShoes,setPopularShoes}) {
-    const [visible, setVisible] = useState(true);
-
+function Home({popularShoes,setPopularShoes,visible, setVisible}) {
     //신발데이터 요청
     const anotherDataRequest = () => {
         axios.get(`https://younggwons.github.io/item/anotherItem.json`)
@@ -23,6 +21,7 @@ function Home({popularShoes,setPopularShoes}) {
             console.log("요청 실패")
         })
     }
+
     return (
         <div>
 

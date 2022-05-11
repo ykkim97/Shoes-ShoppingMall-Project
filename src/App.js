@@ -13,6 +13,7 @@ import SignUp from './routes/SignUp';
 
 function App() {
   const [popularShoes, setPopularShoes] = useState(popularData);
+  const [visible, setVisible] = useState(true); // 다른상품보기
   const [user, setUser] = useState({});
   const [isLogged, setIsLogged] = useState(false);
   
@@ -21,7 +22,12 @@ function App() {
       <Router>
         <ScrollToTop />
         <Routes>
-          <Route exact path='/' element={<Home popularShoes={popularShoes} setPopularShoes={setPopularShoes} />}></Route>
+          <Route exact path='/' element={<Home 
+            popularShoes={popularShoes} 
+            setPopularShoes={setPopularShoes}
+            visible={visible}
+            setVisible={setVisible}
+          />}></Route>
           <Route exact path='/auth' element={<Auth 
             user={user} 
             setUser={setUser}
