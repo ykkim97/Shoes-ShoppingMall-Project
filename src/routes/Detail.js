@@ -24,7 +24,7 @@ const GreyBox = styled.div`
     text-align : center;
 `
 
-function Detail({popularShoes,setPopularShoes}) {
+function Detail({popularShoes,setPopularShoes,isLogged,setIsLogged}) {
     const [tabs, setTabs] = useState(0);
     const [isAlert, setIsAlert] = useState(true);
 
@@ -46,7 +46,7 @@ function Detail({popularShoes,setPopularShoes}) {
 
     return (
         <>
-            <MainNavbar />
+            <MainNavbar isLogged={isLogged} setIsLogged={setIsLogged}/>
             <GreyBox>
                 <h3>신규 고객 대상 30% 할인 쿠폰 증정</h3>
                 <Btn bg="yellow">쿠폰발급받기</Btn>

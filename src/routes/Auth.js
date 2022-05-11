@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import { 
-    createUserWithEmailAndPassword,
+    // createUserWithEmailAndPassword,
     onAuthStateChanged,
     signInWithEmailAndPassword,
-    signOut,
+    // signOut,
 } from "firebase/auth";
 import { auth } from "../firebase";
 import styles from "./Auth.module.css";
@@ -80,8 +80,6 @@ function Auth({user, setUser, isLogged, setIsLogged}) {
                     <button onClick={() => {navigate(`signup`)}}>회원가입</button>
                 </div>
             </div>
-            
-            
 
             {/* 현재 로그인된 사용자 이메일 출력 */}
             {/* <div>User Logged In : {user?.email}</div> */}

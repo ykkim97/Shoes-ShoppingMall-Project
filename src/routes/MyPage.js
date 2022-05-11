@@ -24,10 +24,10 @@ const Item = styled.li`
     cursor: pointer;
 `
 
-function MyPage() {
+function MyPage({isLogged, setIsLogged}) {
     return (
         <>
-            <MainNavbar />
+            <MainNavbar isLogged={isLogged} setIsLogged={setIsLogged}/>
             <h3 className={styles.mypageTitle}>마이 페이지</h3>
             <Bar maxWidth={"150px"}>
                 <h5 className={styles.orderCheckTitle}>주문/배송조회</h5>

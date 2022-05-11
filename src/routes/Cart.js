@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 
-function Cart(props) {
+function Cart({isLogged, setIsLogged}) {
     const state = useSelector((state) => state.basketReducer);
     const alertState = useSelector((state) => state.basketAlertReducer);
     const navigate = useNavigate();
@@ -18,7 +18,7 @@ function Cart(props) {
 
     return (
         <div>
-            <MainNavbar />
+            <MainNavbar isLogged={isLogged} setIsLogged={setIsLogged}/>
             <h1 className={styles.shoppingBasket}>장바구니</h1>
             <Table className={styles.basketTable} striped bordered hover>
                 <thead className={styles.basketTableHead}>
@@ -49,8 +49,8 @@ function Cart(props) {
                                     }>-</button>
                                     <button 
                                         onClick={() => {
-                                             dispatch({type : "항목삭제"});
-                                             alert('상품이 삭제되었습니다.')
+                                            dispatch({type : "항목삭제"});
+                                            alert('상품이 삭제되었습니다.')
                                         }
                                     }>X</button>
                                 </td>

@@ -37,9 +37,14 @@ function App() {
             setIsLogged={setIsLogged}
           />}></Route>
           <Route exact path='/auth/signup' element={<SignUp />}></Route>
-          <Route exact path='/detail/:id' element={<Detail popularShoes={popularShoes} setPopularShoes={setPopularShoes}/>}></Route>
-          <Route exact path='/cart' element={<Cart />}></Route>
-          <Route exact path='/mypage' element={<MyPage />}></Route>
+          <Route exact path='/detail/:id' element={<Detail 
+            popularShoes={popularShoes} 
+            setPopularShoes={setPopularShoes}
+            isLogged={isLogged}
+            setIsLogged={setIsLogged}
+          />}></Route>
+          <Route exact path='/cart' element={<Cart isLogged={isLogged} setIsLogged={setIsLogged}/>}></Route>
+          <Route exact path='/mypage' element={<MyPage isLogged={isLogged} setIsLogged={setIsLogged}/>}></Route>
           <Route path='*' element={<div><img src='/img/404error.jpg'></img></div>}></Route>
         </Routes>
       </Router>

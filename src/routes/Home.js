@@ -5,11 +5,11 @@ import MainCarousel from "../components/MainCarousel";
 import MainNavbar from "../components/MainNavbar";
 import MainPopularItem from "../components/MainPopularItem";
 import Footer from "../components/Footer";
-import {Button} from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import axios from "axios";
 import styles from "./Home.module.css";
 
-function Home({popularShoes,setPopularShoes,visible, setVisible, isLogged, setIsLogged}) {
+function Home({popularShoes,setPopularShoes, visible, setVisible, isLogged, setIsLogged}) {
     //신발데이터 요청
     const anotherDataRequest = () => {
         axios.get(`https://younggwons.github.io/item/anotherItem.json`)
@@ -21,7 +21,6 @@ function Home({popularShoes,setPopularShoes,visible, setVisible, isLogged, setIs
             console.log("요청 실패")
         })
     }
-
 
     return (
         <div>
