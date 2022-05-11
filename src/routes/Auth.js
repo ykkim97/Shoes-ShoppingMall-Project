@@ -51,10 +51,11 @@ function Auth({user, setUser, isLogged, setIsLogged}) {
         <>
             {
                 useEffect(() => {
-                    // 로그인 성공시
-                    isLogged && navigate('/')
+                    // 로그인 성공시 이전페이지로 이동( navigate(-1)을 사용하면 이전페이지로 이동가능)
+                    isLogged && navigate(-1)
                 })
             }
+
             {/* 로그인 / 로그아웃 */}
             <div className={styles.loginDiv}>
                 {/* 로그인 */}
