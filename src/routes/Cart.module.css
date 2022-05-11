@@ -36,6 +36,10 @@
 .quanChangeBtn button:nth-child(2) {
     background: rgb(214, 185, 89);
 }
+.quanChangeBtn button:nth-child(3) {
+    background: rgb(221, 98, 61);
+}
+
 
 .shoppingBasketAlert {
     text-align: center;

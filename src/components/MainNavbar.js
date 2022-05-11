@@ -1,9 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import {signOut} from "firebase/auth";
+import { auth } from "../firebase";
 
 //Navbar Part
-function MainNavbar() {
+function MainNavbar({isLogged, setIsLogged}) {
+    // 로그아웃 함수
+    const signout = async () => {
+        await signOut(auth);
+        setIsLogged(false)
+    }
     return (
         <>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -36,7 +43,10 @@ function MainNavbar() {
                     <Nav.Link as={Link} to="/mypage">
                     마이페이지
                     </Nav.Link>
-                    <Nav.Link as={Link} to="/auth">로그인</Nav.Link>
+                    {/* 로그인 */}
+                    {!isLogged && <Nav.Link as={Link} to="/auth">로그인</Nav.Link>}
+                    {/* 로그아웃 */}
+                    {isLogged && <Nav.Link onClick={signout}>로그아웃</Nav.Link>}
                 </Nav>
                 </Navbar.Collapse>
                 </Container>

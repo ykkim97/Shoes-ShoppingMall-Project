@@ -33,29 +33,28 @@ function Auth({user, setUser, isLogged, setIsLogged}) {
                 loginEmail,
                 loginPassword
             );
-            
-            // true일 경우 페이지 전환
-            if (isLogged === true) {
-                navigate(`/`);
-            }
             // 로그인 성공시 true로
             setIsLogged(true);
-            console.log(isLogged);
             
         } catch (error) {
             console.log(error.message);
             alert("이메일 혹은 비밀번호가 틀립니다.");
         }
     }
-    // 로그아웃 함수
-    const signout = async () => {
-        await signOut(auth);
-        setIsLogged(false)
-        console.log(isLogged);
-    }
+    // // 로그아웃 함수
+    // const signout = async () => {
+    //     await signOut(auth);
+    //     setIsLogged(false)
+    // }
 
     return (
         <>
+            {
+                useEffect(() => {
+                    // 로그인 성공시
+                    isLogged && navigate('/')
+                })
+            }
             {/* 로그인 / 로그아웃 */}
             <div className={styles.loginDiv}>
                 {/* 로그인 */}
@@ -80,11 +79,14 @@ function Auth({user, setUser, isLogged, setIsLogged}) {
                     <button onClick={() => {navigate(`signup`)}}>회원가입</button>
                 </div>
             </div>
+            
+            
+
             {/* 현재 로그인된 사용자 이메일 출력 */}
-            <div>User Logged In : {user?.email}</div>
+            {/* <div>User Logged In : {user?.email}</div> */}
 
             {/* 로그아웃 */}
-            <button onClick={signout}>로그아웃</button>
+            {/* <button onClick={signout}>로그아웃</button> */}
         </>
     )
 }

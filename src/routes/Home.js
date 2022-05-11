@@ -9,7 +9,7 @@ import {Button} from "react-bootstrap";
 import axios from "axios";
 import styles from "./Home.module.css";
 
-function Home({popularShoes,setPopularShoes,visible, setVisible}) {
+function Home({popularShoes,setPopularShoes,visible, setVisible, isLogged, setIsLogged}) {
     //신발데이터 요청
     const anotherDataRequest = () => {
         axios.get(`https://younggwons.github.io/item/anotherItem.json`)
@@ -22,10 +22,11 @@ function Home({popularShoes,setPopularShoes,visible, setVisible}) {
         })
     }
 
+
     return (
         <div>
 
-            <MainNavbar />
+            <MainNavbar isLogged={isLogged} setIsLogged={setIsLogged}/>
 
             <MainCarousel />
 

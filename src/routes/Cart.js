@@ -52,7 +52,7 @@ function Cart(props) {
                                              dispatch({type : "항목삭제"});
                                              alert('상품이 삭제되었습니다.')
                                         }
-                                    }>삭제</button>
+                                    }>X</button>
                                 </td>
                             </tr>
                         )

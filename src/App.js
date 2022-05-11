@@ -27,6 +27,8 @@ function App() {
             setPopularShoes={setPopularShoes}
             visible={visible}
             setVisible={setVisible}
+            isLogged={isLogged}
+            setIsLogged={setIsLogged}
           />}></Route>
           <Route exact path='/auth' element={<Auth 
             user={user} 
