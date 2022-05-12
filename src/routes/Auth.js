@@ -64,21 +64,22 @@ function Auth({user, setUser, isLogged, setIsLogged}) {
                     <input 
                         type="text" 
                         name="email" 
-                        placeholder="Email..."
+                        placeholder="이메일"
                         onChange={(e) => {setLoginEmail(e.target.value)}}
                         className={styles.loginEmailInput}
                     />
                     <input 
                         type="password" 
                         name="password" 
-                        placeholder="Password..."
+                        placeholder="비밀번호"
                         onChange={(e) => {setLoginPassword(e.target.value)}}
                         className={styles.loginPasswordInput}
                     />
                     <button onClick={signin} className={styles.loginBtn}>로그인</button>
                     <hr />
-                    <button onClick={() => {navigate(`signup`)}}>회원가입</button>
+                    <button onClick={() => {navigate(`signup`)}} className={styles.signUpBtn}>회원가입</button>
                 </div>
+                <h5 className={styles.title}>카페슈 CafeShoe</h5>
             </div>
 
             {/* 현재 로그인된 사용자 이메일 출력 */}
