@@ -14,7 +14,6 @@ function Cart({isLogged, setIsLogged}) {
     const alertState = useSelector((state) => state.basketAlertReducer);
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    console.log(state);
 
     return (
         <div>
