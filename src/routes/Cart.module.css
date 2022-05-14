@@ -70,6 +70,18 @@
     color: white;
 }
 
+.totalAmount {
+    width: 100%;
+    max-width: 1000px;
+    height: 100px;
+    margin: auto;
+    padding-top: 30px;
+    background: rgb(75, 74, 74);
+    color: white;
+    font-size: 25px;
+    text-align: center;
+}
+
 .payment {
     margin: 30px;
     padding: 20px;

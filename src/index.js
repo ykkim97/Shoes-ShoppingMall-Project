@@ -15,7 +15,8 @@ const basketAlertReducer = (state=true, action) => {
 }
 
 const basketItemInfo = [
-  { id : 0, name : 'Brown Stone', quan : 0},
+  // 예시
+  { id : 0, name : 'Brown Stone', quan : 1, price : 120000},
 ];
 
 // 장바구니 reducer
@@ -30,21 +31,25 @@ const basketReducer = (state = basketItemInfo,action) => {
         addBasket.push(action.payload);
       }
       return addBasket;
+
     case "항목삭제" : 
       let deleteBasket = [...state];
       deleteBasket.pop(action.payload);
       return deleteBasket;
+
     case "수량증가" :
       let addCopy = [...state];
       let addIndex = addCopy.findIndex((item) => { return item.id === action.id })
       addCopy[addIndex].quan++;
+      // addCopy[addIndex].price += action.price;
       return addCopy;
+
     case "수량감소" :
       let minusCopy = [...state];
       let minusIndex = minusCopy.findIndex((item) => { return item.id === action.id })
       minusCopy[minusIndex].quan--;
       return minusCopy;
-    
+
     default :
       return state;
   }

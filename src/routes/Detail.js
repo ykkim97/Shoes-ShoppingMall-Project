@@ -35,10 +35,28 @@ function Detail({popularShoes,setPopularShoes,isLogged,setIsLogged}) {
     const basketState = useSelector(state => state.basketReducer);
     const dispatch = useDispatch();
     const addBasket = () => {
-        dispatch({type : "항목추가", payload : {id : findItem.id, name : findItem.title, quan : 1}});
+        dispatch({type : "항목추가", payload : {id : findItem.id, name : findItem.title, quan : 1, price : findItem.price}});
         alert('장바구니에 상품이 담겼습니다.')
     }
 
+    // localStorage에 최근 본 상품 ID값 넣기
+    useEffect(() => {
+        let watchedArray = localStorage.getItem('watched');
+
+        if (watchedArray == null) {
+            watchedArray = []; // localStorage가 비어있을 경우 빈 array로 만듬
+        } else {
+            watchedArray = JSON.parse(watchedArray); // JSON자료를 Array로 변환해서 가져옴
+        }
+
+        watchedArray.push(id); // 가져온 기존 array에 상품 ID값을 푸시
+        watchedArray = new Set(watchedArray); // 상품 ID가 중복되는 것을 막기위해 Set으로 중복 제거
+        watchedArray = [...watchedArray]; // Set자료형에서 다시 Array로 변환
+
+        localStorage.setItem('watched', JSON.stringify(watchedArray)) // localStorage에 다시 JSON자료형으로 넣어줌 
+    }, [])
+
+    // 품절 임박 메세지 타이머 실행
     useEffect(() => {
         const timer = setTimeout(() => setIsAlert(false),3000);
         return () => clearTimeout(timer);

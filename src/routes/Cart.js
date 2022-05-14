@@ -1,6 +1,6 @@
 // 장바구니 Page
 
-import React from "react";
+import React, { useState } from "react";
 import MainNavbar from "../components/MainNavbar";
 import {Table,Button} from "react-bootstrap";
 import Footer from "../components/Footer";
@@ -10,22 +10,37 @@ import { useNavigate } from "react-router-dom";
 
 
 function Cart({isLogged, setIsLogged}) {
+    const [totalAmount, setTotalAmount] = useState(0);
+
     const state = useSelector((state) => state.basketReducer);
     const alertState = useSelector((state) => state.basketAlertReducer);
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
+    const onChange = (e) => {
+        setTotalAmount(prev => prev += e.target.value);
+        console.log(e.target.value)
+    }
+
     return (
         <>
             <div className={styles.shoppingBasketDiv}>
+
+                {/* Navbar */}
                 <MainNavbar isLogged={isLogged} setIsLogged={setIsLogged}/>
+
+                {/* "장바구니" 제목 */}
                 <h1 className={styles.shoppingBasket}>장바구니</h1>
+
+                {/* 장바구니 목록 테이블 */}
                 <Table className={styles.basketTable} striped bordered hover>
                     <thead className={styles.basketTableHead}>
                         <tr>
                             <th>상품 ID</th>
                             <th>상품명</th>
                             <th>수량</th>
+                            <th>단가</th>
+                            <th>총 합</th>
                             <th>변경</th>
                         </tr>
                     </thead>
@@ -33,13 +48,17 @@ function Cart({isLogged, setIsLogged}) {
                         {state.map((item, idx) => {
                             return (
                                 <tr key={idx}>
-                                    <td>{item.id}</td>
+                                    <td>{item.id}</td> 
                                     <td>{item.name}</td>
                                     <td>{item.quan}</td>
+                                    <td>{item.price}</td>
+                                    <td>
+                                        {item.price * item.quan}
+                                    </td>
                                     <td className={styles.quanChangeBtn}>
                                         <button 
                                             onClick={() => {
-                                                dispatch({type : "수량증가", id : item.id})
+                                                dispatch({type : "수량증가", id : item.id, price : item.price})
                                             }
                                         }>+</button>
                                         <button 
@@ -59,7 +78,8 @@ function Cart({isLogged, setIsLogged}) {
                         })}
                     </tbody>
                 </Table>
-                
+
+                {/* 신규고객 첫 구매시 30%할인 광고 */}
                 {
                     alertState === true ? 
                     (<div className={styles.shoppingBasketAlert}>
@@ -70,6 +90,13 @@ function Cart({isLogged, setIsLogged}) {
                     </div>) : null
                 }
 
+                
+                {/* 총 결제 금액 보여주기 */}
+                <div className={styles.totalAmount}>
+                    <p>총 결제 금액 : {totalAmount} 원</p>
+                </div>
+
+                {/* 결제하기, 뒤로가기 버튼 */}
                 <div className={styles.payment}>
                     <Button className={styles.goPaymentBtn}>결제하기</Button>
                     <Button className={styles.goBackBtn} onClick={() => {navigate(-1)}}>뒤로가기</Button>
