@@ -19,9 +19,9 @@ function MainNavbar({isLogged, setIsLogged}) {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">  
                 <Nav className="me-auto">
-                    <Nav.Link as={Link} to="/">남성신발</Nav.Link>
-                    <Nav.Link as={Link} to="/">여성신발</Nav.Link>
-                    <Nav.Link as={Link} to="/">키즈</Nav.Link>
+                    <Nav.Link as={Link} to="/man">남성신발</Nav.Link>
+                    <Nav.Link as={Link} to="/woman">여성신발</Nav.Link>
+                    <Nav.Link as={Link} to="/kids">키즈</Nav.Link>
 
                     {/* 이하 내용 : 카테고리 추가하고 싶을 때 사용하면됨. */}
                     {/* <NavDropdown title="남성신발" id="collasible-nav-dropdown">

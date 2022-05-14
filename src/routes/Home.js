@@ -46,7 +46,7 @@ function Home({popularShoes,setPopularShoes, visible, setVisible, isLogged, setI
                 visible && 
                 (<div className={styles["another-item"]}>
                     <Button variant="primary" onClick={anotherDataRequest}>다른 상품보기</Button>{' '}
-                    <ul></ul>
+                    {/* <ul></ul> */}
                 </div>)
             }
 

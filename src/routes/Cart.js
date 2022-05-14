@@ -16,66 +16,67 @@ function Cart({isLogged, setIsLogged}) {
     const dispatch = useDispatch();
 
     return (
-        <div>
-            <MainNavbar isLogged={isLogged} setIsLogged={setIsLogged}/>
-            <h1 className={styles.shoppingBasket}>장바구니</h1>
-            <Table className={styles.basketTable} striped bordered hover>
-                <thead className={styles.basketTableHead}>
-                    <tr>
-                        <th>상품 ID</th>
-                        <th>상품명</th>
-                        <th>수량</th>
-                        <th>변경</th>
-                    </tr>
-                </thead>
-                <tbody className={styles.basketTableBody}>
-                    {state.map((item, idx) => {
-                        return (
-                            <tr key={idx}>
-                                <td>{item.id}</td>
-                                <td>{item.name}</td>
-                                <td>{item.quan}</td>
-                                <td className={styles.quanChangeBtn}>
-                                    <button 
-                                        onClick={() => {
-                                            dispatch({type : "수량증가", id : item.id})
-                                        }
-                                    }>+</button>
-                                    <button 
-                                        onClick={() => {
-                                            if (item.quan > 0) dispatch({type : "수량감소", id : item.id});
-                                        }
-                                    }>-</button>
-                                    <button 
-                                        onClick={() => {
-                                            dispatch({type : "항목삭제"});
-                                            alert('상품이 삭제되었습니다.')
-                                        }
-                                    }>X</button>
-                                </td>
-                            </tr>
-                        )
-                    })}
-                </tbody>
-            </Table>
-            
-            {
-                alertState === true ? 
-                (<div className={styles.shoppingBasketAlert}>
-                    <p>신규 고객 첫 구매 시 30% 할인! </p>
-                    <button onClick={() => {
-                        dispatch({type : "닫기"})
-                    }}>닫기</button>
-                </div>) : null
-            }
+        <>
+            <div className={styles.shoppingBasketDiv}>
+                <MainNavbar isLogged={isLogged} setIsLogged={setIsLogged}/>
+                <h1 className={styles.shoppingBasket}>장바구니</h1>
+                <Table className={styles.basketTable} striped bordered hover>
+                    <thead className={styles.basketTableHead}>
+                        <tr>
+                            <th>상품 ID</th>
+                            <th>상품명</th>
+                            <th>수량</th>
+                            <th>변경</th>
+                        </tr>
+                    </thead>
+                    <tbody className={styles.basketTableBody}>
+                        {state.map((item, idx) => {
+                            return (
+                                <tr key={idx}>
+                                    <td>{item.id}</td>
+                                    <td>{item.name}</td>
+                                    <td>{item.quan}</td>
+                                    <td className={styles.quanChangeBtn}>
+                                        <button 
+                                            onClick={() => {
+                                                dispatch({type : "수량증가", id : item.id})
+                                            }
+                                        }>+</button>
+                                        <button 
+                                            onClick={() => {
+                                                if (item.quan > 0) dispatch({type : "수량감소", id : item.id});
+                                            }
+                                        }>-</button>
+                                        <button 
+                                            onClick={() => {
+                                                dispatch({type : "항목삭제"});
+                                                alert('상품이 삭제되었습니다.')
+                                            }
+                                        }>X</button>
+                                    </td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </Table>
+                
+                {
+                    alertState === true ? 
+                    (<div className={styles.shoppingBasketAlert}>
+                        <p>신규 고객 첫 구매 시 30% 할인! </p>
+                        <button onClick={() => {
+                            dispatch({type : "닫기"})
+                        }}>닫기</button>
+                    </div>) : null
+                }
 
-            <div className={styles.payment}>
-                <Button variant="success">결제하기</Button>
-                <Button variant="warning" onClick={() => {navigate(-1)}}>뒤로가기</Button>
+                <div className={styles.payment}>
+                    <Button className={styles.goPaymentBtn}>결제하기</Button>
+                    <Button className={styles.goBackBtn} onClick={() => {navigate(-1)}}>뒤로가기</Button>
+                </div>
             </div>
-
             <Footer />
-        </div>
+        </>
     );
 }
 
