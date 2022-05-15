@@ -10,17 +10,14 @@ import { useNavigate } from "react-router-dom";
 
 
 function Cart({isLogged, setIsLogged}) {
-    const [totalAmount, setTotalAmount] = useState(0);
+    let total = 0;
 
     const state = useSelector((state) => state.basketReducer);
     const alertState = useSelector((state) => state.basketAlertReducer);
+    
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const onChange = (e) => {
-        setTotalAmount(prev => prev += e.target.value);
-        console.log(e.target.value)
-    }
 
     return (
         <>
@@ -93,7 +90,12 @@ function Cart({isLogged, setIsLogged}) {
                 
                 {/* 총 결제 금액 보여주기 */}
                 <div className={styles.totalAmount}>
-                    <p>총 결제 금액 : {totalAmount} 원</p>
+                    <p>총 결제 금액 : 
+                        {state.map(item => {
+                            total += (item.price * item.quan);
+                            return total;
+                        })[state.length - 1]} 원
+                    </p>
                 </div>
 
                 {/* 결제하기, 뒤로가기 버튼 */}
@@ -102,6 +104,7 @@ function Cart({isLogged, setIsLogged}) {
                     <Button className={styles.goBackBtn} onClick={() => {navigate(-1)}}>뒤로가기</Button>
                 </div>
             </div>
+
             <Footer />
         </>
     );

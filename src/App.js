@@ -19,6 +19,7 @@ function App() {
   const [visible, setVisible] = useState(true); // 다른상품보기
   const [user, setUser] = useState({});
   const [isLogged, setIsLogged] = useState(false);
+
   
   return (
     <div className="App">
@@ -74,7 +75,10 @@ function App() {
           />}></Route>
 
           {/* 장바구니 페이지 */}
-          <Route exact path='/cart' element={<Cart isLogged={isLogged} setIsLogged={setIsLogged}/>}></Route>
+          <Route exact path='/cart' element={<Cart 
+            isLogged={isLogged} 
+            setIsLogged={setIsLogged}
+          />}></Route>
 
           {/* 마이 페이지 */}
           <Route exact path='/mypage' element={<MyPage isLogged={isLogged} setIsLogged={setIsLogged}/>}></Route>

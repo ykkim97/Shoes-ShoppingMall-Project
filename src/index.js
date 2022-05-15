@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import { combineReducers,createStore } from 'redux';
+
 
 // 장바구니 알림 reducer
 const basketAlertReducer = (state=true, action) => {
@@ -17,7 +18,9 @@ const basketAlertReducer = (state=true, action) => {
 const basketItemInfo = [
   // 예시
   { id : 0, name : 'Brown Stone', quan : 1, price : 120000},
+  // { id : 1, name : 'total', quan : 1, price : 110000},
 ];
+
 
 // 장바구니 reducer
 const basketReducer = (state = basketItemInfo,action) => {
@@ -41,7 +44,6 @@ const basketReducer = (state = basketItemInfo,action) => {
       let addCopy = [...state];
       let addIndex = addCopy.findIndex((item) => { return item.id === action.id })
       addCopy[addIndex].quan++;
-      // addCopy[addIndex].price += action.price;
       return addCopy;
 
     case "수량감소" :
@@ -62,7 +64,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <App/>
     </Provider>
   </React.StrictMode>
 );
