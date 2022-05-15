@@ -1,26 +1,34 @@
 import React, { useState } from "react";
+import Footer from "../components/Footer";
 import MainNavbar from "../components/MainNavbar";
+import MainPopularItem from "../components/MainPopularItem";
+import styles from "./ManShoes.module.css";
 
-function ManShoes({isLogged, setIsLogged}) {
-    const [manShoesData, setManShoesData] = useState([]);
+function ManShoes({popularShoes, isLogged, setIsLogged, ax}) {
+    const count = [0];
+
     return(
         <>
-            <div>
+            <div className={styles.manShoesDiv}>
                 <MainNavbar isLogged={isLogged} setIsLogged={setIsLogged}/>
-                <h3>남성신발 ({0}개의 상품)</h3>
+                <h3 className={styles.title}>남성신발 ({count}개의 상품)</h3>
                 <div className="container">
-                    <div className="row">
-                        {/* 
-                            반복문 -> 
-                            <div className="col-md-4">
-                                내용 : 이미지, 상품명, 상품간단설명, 상품가격
-                            </div> 
-                        */}
+                    <div className="row" id={styles["item"]}>
+                        {ax && popularShoes.map((shoes, idx) => {
+                            if(shoes.classify == "man") {
+                                count[0] += 1;
+                                return (
+                                    <MainPopularItem shoes={shoes} key={idx} idx={idx} />
+                                )
+                            } 
+                        })}
                     </div>
                 </div>
+                <Footer />
             </div>
+            
         </>
     )
 }
 
-export default ManShoes; 
+export default ManShoes;

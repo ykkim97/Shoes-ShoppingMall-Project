@@ -24,7 +24,7 @@ function MainPopularItem({shoes, idx}) {
             {
                 idx < 21 
                 ? (
-                    <div className="col-md-4 populars" onClick={() => {navigate(`detail/${shoes.id}`)}}>
+                    <div className="col-md-4 populars" onClick={() => {navigate(`/detail/${shoes.id}`)}}>
                         <img src={`https://raw.githubusercontent.com/younggwons/younggwons.github.io/master/item/shoes${idx}.jpg`} width="80%" height="190px" />
                         <ShoesTitle>{shoes.title}</ShoesTitle>
                         <ShoesContent>{shoes.content}</ShoesContent>

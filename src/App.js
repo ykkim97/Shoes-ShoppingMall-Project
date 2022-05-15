@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from './routes/Home';
 import Detail from './routes/Detail';
@@ -13,14 +13,25 @@ import SignUp from './routes/SignUp';
 import ManShoes from './routes/ManShoes';
 import WomanShoes from './routes/WomanShoes';
 import KidsShoes from './routes/KidsShoes';
+import axios from "axios";
 
 function App() {
   const [popularShoes, setPopularShoes] = useState(popularData);
-  const [visible, setVisible] = useState(true); // 다른상품보기
   const [user, setUser] = useState({});
   const [isLogged, setIsLogged] = useState(false);
+  const [ax, setAx] = useState(false);
 
-  
+  useEffect(() => {
+        !ax && axios.get(`https://younggwons.github.io/item/anotherItem.json`)
+          .then((result) => {
+              setPopularShoes([...popularShoes, ...result.data]);
+              setAx(true);
+          })
+          .catch(() => {
+              console.log("요청 실패")
+          })
+  }, [])
+
   return (
     <div className="App">
       <Router>
@@ -29,10 +40,7 @@ function App() {
           
           {/* 메인 페이지 */}
           <Route exact path='/' element={<Home 
-            popularShoes={popularShoes} 
-            setPopularShoes={setPopularShoes}
-            visible={visible}
-            setVisible={setVisible}
+            popularShoes={popularShoes}
             isLogged={isLogged}
             setIsLogged={setIsLogged}
           />}></Route>
@@ -60,18 +68,27 @@ function App() {
           <Route exact path='/man' element={<ManShoes 
             isLogged={isLogged}
             setIsLogged={setIsLogged}
+            popularShoes={popularShoes}
+            setPopularShoes={setPopularShoes}
+            ax={ax}
           />}></Route>
 
           {/* 여성신발 페이지 */}
           <Route exact path='/woman' element={<WomanShoes 
             isLogged={isLogged}
             setIsLogged={setIsLogged}
+            popularShoes={popularShoes}
+            setPopularShoes={setPopularShoes}
+            ax={ax}
           />}></Route>
 
           {/* 키즈신발 페이지 */}
           <Route exact path='/kids' element={<KidsShoes 
             isLogged={isLogged}
             setIsLogged={setIsLogged}
+            popularShoes={popularShoes}
+            setPopularShoes={setPopularShoes}
+            ax={ax}
           />}></Route>
 
           {/* 장바구니 페이지 */}

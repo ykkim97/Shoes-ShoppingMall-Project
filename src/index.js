@@ -17,8 +17,7 @@ const basketAlertReducer = (state=true, action) => {
 
 const basketItemInfo = [
   // 예시
-  { id : 0, name : 'Brown Stone', quan : 1, price : 120000},
-  // { id : 1, name : 'total', quan : 1, price : 110000},
+  // { id : 0, name : 'Brown Stone', quan : 1, price : 120000},
 ];
 
 
