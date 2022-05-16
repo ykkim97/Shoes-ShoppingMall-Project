@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getDatabase } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -8,6 +9,7 @@ import { getAuth } from "firebase/auth";
 const firebaseConfig = {
     apiKey: "AIzaSyCCwt8AVPXoEGpX2XHzoBR6SYLJsRuUOak",
     authDomain: "shoes-shoppingmall.firebaseapp.com",
+    databaseURL: "https://shoes-shoppingmall-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "shoes-shoppingmall",
     storageBucket: "shoes-shoppingmall.appspot.com",
     messagingSenderId: "533905534329",
@@ -16,5 +18,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+export const database = getDatabase();
 
 export const auth = getAuth(app);

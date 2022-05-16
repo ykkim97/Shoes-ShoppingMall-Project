@@ -2,7 +2,9 @@ import React from "react";
 import MainNavbar from "../components/MainNavbar";
 import styled from "styled-components"
 import styles from "./MyPage.module.css";
+import { useNavigate } from "react-router-dom";
 
+// styled-components
 const Bar = styled.div`
     background : #cfcccc;
     width : 100%;
@@ -24,7 +26,9 @@ const Item = styled.li`
     cursor: pointer;
 `
 
+
 function MyPage({isLogged, setIsLogged}) {
+    const navigate = useNavigate();
     return (
         <>
             <MainNavbar isLogged={isLogged} setIsLogged={setIsLogged}/>
@@ -42,10 +46,10 @@ function MyPage({isLogged, setIsLogged}) {
             <Bar maxWidth={"600px"}>
                 <h5 className={styles.myShoppingTitle}>나의 쇼핑 활동</h5>
                 <ul>
-                    <Item>장바구니</Item>
+                    <Item onClick={() => {navigate("/cart")}}>장바구니</Item>
                     <Item>주문내역조회</Item>
                     <Item>1:1 문의</Item>
-                    <Item>최근 본 상품</Item>
+                    <Item onClick={() => {navigate("/watched")}}>최근 본 상품</Item>
                 </ul>
             </Bar>
         </>

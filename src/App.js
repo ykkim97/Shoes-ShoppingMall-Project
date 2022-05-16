@@ -14,6 +14,8 @@ import ManShoes from './routes/ManShoes';
 import WomanShoes from './routes/WomanShoes';
 import KidsShoes from './routes/KidsShoes';
 import axios from "axios";
+import Watched from './routes/Watched';
+import Test from './routes/Test';
 
 function App() {
   const [popularShoes, setPopularShoes] = useState(popularData);
@@ -99,6 +101,16 @@ function App() {
 
           {/* 마이 페이지 */}
           <Route exact path='/mypage' element={<MyPage isLogged={isLogged} setIsLogged={setIsLogged}/>}></Route>
+
+          {/* 최근 본 상품 */}
+          <Route exact path='/watched' element={<Watched isLogged={isLogged} setIsLogged={setIsLogged}/>}></Route>
+
+          {/* DB 테스트용 */}
+          <Route exact path='/test' element={<Test 
+            isLogged={isLogged} 
+            setIsLogged={setIsLogged}
+            popularShoes={popularShoes}
+          />}></Route>
 
           {/* 그 외 404에러 */}
           <Route path='*' element={<div><img src='/img/404error.jpg'></img></div>}></Route>
