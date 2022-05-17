@@ -7,7 +7,7 @@ import { ref, onValue } from "firebase/database";
 
 const databaseURL = "https://shoes-shoppingmall-default-rtdb.asia-southeast1.firebasedatabase.app";
 
-function Test({popularShoes,isLogged, setIsLogged}) {
+function Test({popularShoes, isLogged, setIsLogged}) {
     const [anotherItem, setAnotherItem] = useState([]);
     const [anotherItemTest, setAnotherItemTest] = useState([]);
     const count = [0];

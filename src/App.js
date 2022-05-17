@@ -103,7 +103,11 @@ function App() {
           <Route exact path='/mypage' element={<MyPage isLogged={isLogged} setIsLogged={setIsLogged}/>}></Route>
 
           {/* 최근 본 상품 */}
-          <Route exact path='/watched' element={<Watched isLogged={isLogged} setIsLogged={setIsLogged}/>}></Route>
+          <Route exact path='/watched' element={<Watched 
+            isLogged={isLogged} 
+            setIsLogged={setIsLogged}
+            popularShoes={popularShoes}
+          />}></Route>
 
           {/* DB 테스트용 */}
           <Route exact path='/test' element={<Test 

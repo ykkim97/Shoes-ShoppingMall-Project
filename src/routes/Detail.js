@@ -49,7 +49,7 @@ function Detail({popularShoes,setPopularShoes,isLogged,setIsLogged}) {
             watchedArray = JSON.parse(watchedArray); // JSON자료를 Array로 변환해서 가져옴
         }
 
-        watchedArray.push(id); // 가져온 기존 array에 상품 ID값을 푸시
+        watchedArray.push(findItem.id); // 가져온 기존 array에 상품 ID값을 푸시
         watchedArray = new Set(watchedArray); // 상품 ID가 중복되는 것을 막기위해 Set으로 중복 제거
         watchedArray = [...watchedArray]; // Set자료형에서 다시 Array로 변환
 

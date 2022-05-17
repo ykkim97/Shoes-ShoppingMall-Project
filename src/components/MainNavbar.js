@@ -39,6 +39,7 @@ function MainNavbar({isLogged, setIsLogged}) {
                     
                 </Nav>
                 <Nav>
+                    <Nav.Link as={Link} to="/watched">최근 본 상품</Nav.Link>
                     <Nav.Link as={Link} to="/cart">장바구니</Nav.Link>
                     {isLogged && <Nav.Link as={Link} to="/mypage">마이페이지</Nav.Link>}
                     {/* 로그인 */}
