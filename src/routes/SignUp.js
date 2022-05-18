@@ -4,17 +4,12 @@ import { auth } from "../firebase";
 import styles from "./SignUp.module.css";
 import { getDatabase, ref, push } from "firebase/database";
 import { getAuth } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 
 function SignUp () {
     const [registerEmail, setRegisterEmail] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
-    const navigate = useNavigate();
     const database = getDatabase();
     const auth = getAuth();
-
-    // const userId = auth.currentUser.uid;
-    const [userId, setUserId] = useState("");
     
     // 회원가입 함수
     const signup = async () => {
@@ -25,10 +20,11 @@ function SignUp () {
                 registerEmail,
                 registerPassword
             )
-            setUserId(auth.currentUser.uid)
+            const userId = auth.currentUser.uid;
             push(ref(database, `users/` + userId), {
                 email: registerEmail,
             })
+            console.log(userId)
 
         } catch (error) {
             console.log(error.message);
@@ -62,7 +58,7 @@ function SignUp () {
                     }} 
                     className={styles.signUpPasswordInput}
                 />
-                <button onClick={signup} className={styles.signUpBtn}>가입완료하기</button>
+                <button onClick={signup} className={styles.signUpBtn}>완료</button>
             </div>
         </div>
     )
