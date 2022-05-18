@@ -24,13 +24,18 @@ function Watched({popularShoes, isLogged, setIsLogged}) {
                 {
                     watchedItemID.length === 0 
                     ? <h3 className={styles.emptyMessage}>최근 본 상품이 없어요!</h3> 
-                    : (popularShoes.map((shoes, idx) => {
-                        if(watchedItemID.includes(shoes.id)) {
-                            return (
-                                <ItemHistory shoes={shoes} key={idx} idx={idx} />
-                            )
-                        }
+                    : (watchedItemID.map((idx) => {
+                        return (
+                            <ItemHistory shoes={popularShoes[idx]} key={idx} idx={idx} />
+                        )
                     }))
+                    // : (popularShoes.map((shoes, idx) => {
+                    //     if(watchedItemID.includes(shoes.id)) {
+                    //         return (
+                    //             <ItemHistory shoes={shoes} key={idx} idx={idx} />
+                    //         )
+                    //     }
+                    // }))
                 }
             </div>
         </div>

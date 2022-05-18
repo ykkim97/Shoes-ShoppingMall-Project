@@ -2,10 +2,16 @@ import React,{useState} from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import styles from "./SignUp.module.css";
+import { getDatabase, ref, push } from "firebase/database";
+import { getAuth } from "firebase/auth";
 
 function SignUp () {
     const [registerEmail, setRegisterEmail] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
+    const database = getDatabase();
+    const auth = getAuth();
+    
+    const userId = auth.currentUser.uid;
 
     // 회원가입 함수
     const signup = async () => {
@@ -14,8 +20,13 @@ function SignUp () {
                 auth,
                 registerEmail,
                 registerPassword
-            );
-            console.log(user);
+            )
+
+            push(ref(database, `users/` + userId), {
+                email: registerEmail,
+            })
+            console.log(userId)
+
         } catch (error) {
             console.log(error.message);
         }
