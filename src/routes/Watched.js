@@ -29,13 +29,6 @@ function Watched({popularShoes, isLogged, setIsLogged}) {
                             <ItemHistory shoes={popularShoes[idx]} key={idx} idx={idx} />
                         )
                     }))
-                    // : (popularShoes.map((shoes, idx) => {
-                    //     if(watchedItemID.includes(shoes.id)) {
-                    //         return (
-                    //             <ItemHistory shoes={shoes} key={idx} idx={idx} />
-                    //         )
-                    //     }
-                    // }))
                 }
             </div>
         </div>
