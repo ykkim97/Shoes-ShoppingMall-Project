@@ -6,6 +6,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #212529;
+    background: linear-gradient(to left, #212529, rgb(61, 61, 61),#212529);
     color: #ffffffc9;
 }

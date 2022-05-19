@@ -10,11 +10,10 @@ function SignUp () {
     const [registerPassword, setRegisterPassword] = useState("");
     const database = getDatabase();
     const auth = getAuth();
-    
+
     // 회원가입 함수
     const signup = async () => {
         try {
-            
             const user = await createUserWithEmailAndPassword(
                 auth,
                 registerEmail,
@@ -36,7 +35,7 @@ function SignUp () {
             {/* 회원가입 */}
             <div className={styles.signUpForm}>
                 <h3>회원가입</h3>
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">이메일</label>
                 <input 
                     type="text"
                     id="email"
@@ -47,7 +46,7 @@ function SignUp () {
                     }}
                     className={styles.signUpEmailInput}
                 />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">비밀번호(8자리 이상)</label>
                 <input 
                     type="password" 
                     id="password"
@@ -58,8 +57,9 @@ function SignUp () {
                     }} 
                     className={styles.signUpPasswordInput}
                 />
-                <button onClick={signup} className={styles.signUpBtn}>완료</button>
+                <button onClick={signup} className={styles.signUpBtn}>가입완료하기</button>
             </div>
+            <h5 className={styles.title}>카페슈 CafeShoe</h5>
         </div>
     )
 }

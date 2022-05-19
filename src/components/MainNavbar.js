@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
+import styles from "./MainNavbar.module.css";
 
 //Navbar Part
 function MainNavbar({isLogged, setIsLogged}) {
@@ -13,9 +14,9 @@ function MainNavbar({isLogged, setIsLogged}) {
     }
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className={styles.NavbarDiv}>
                 <Container>
-                <Navbar.Brand as={Link} to="/">카페슈</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/" className={styles.brand}>카페슈</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">  
                 <Nav className="me-auto">

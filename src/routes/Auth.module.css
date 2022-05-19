@@ -34,14 +34,22 @@
 
 .loginBtn {
     height: 50px;
-    background: #c5c6c7;
+    background: #e6e1e1;
     border: none;
 }
 
+.loginBtn:hover {
+    background: #cecccc;
+}
+
 .signUpBtn {
-    background: #c5c6c7;
+    background: #e6e1e1;
     border: none;
     height: 45px;
+}
+
+.signUpBtn:hover {
+    background: #cecccc;
 }
 
 .title {
