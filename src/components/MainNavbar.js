@@ -20,9 +20,9 @@ function MainNavbar({isLogged, setIsLogged}) {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">  
                 <Nav className="me-auto">
-                    <Nav.Link as={Link} to="/man">남성신발</Nav.Link>
-                    <Nav.Link as={Link} to="/woman">여성신발</Nav.Link>
-                    <Nav.Link as={Link} to="/kids">키즈</Nav.Link>
+                    <Nav.Link as={Link} to="/man" title="남성신발">남성신발</Nav.Link>
+                    <Nav.Link as={Link} to="/woman" title="여성신발">여성신발</Nav.Link>
+                    <Nav.Link as={Link} to="/kids" title="키즈">키즈</Nav.Link>
 
                     {/* 이하 내용 : 카테고리 추가하고 싶을 때 사용하면됨. */}
                     {/* <NavDropdown title="남성신발" id="collasible-nav-dropdown">
@@ -40,13 +40,13 @@ function MainNavbar({isLogged, setIsLogged}) {
                     
                 </Nav>
                 <Nav>
-                    <Nav.Link as={Link} to="/watched">최근 본 상품</Nav.Link>
-                    <Nav.Link as={Link} to="/cart">장바구니</Nav.Link>
-                    {isLogged && <Nav.Link as={Link} to="/mypage">마이페이지</Nav.Link>}
+                    <Nav.Link as={Link} to="/watched" title="최근 본 상품">최근 본 상품</Nav.Link>
+                    <Nav.Link as={Link} to="/cart" title="장바구니">장바구니</Nav.Link>
+                    {isLogged && <Nav.Link as={Link} to="/mypage" title="마이페이지">마이페이지</Nav.Link>}
                     {/* 로그인 */}
-                    {!isLogged && <Nav.Link as={Link} to="/auth">로그인</Nav.Link>}
+                    {!isLogged && <Nav.Link as={Link} to="/auth" title="로그인">로그인</Nav.Link>}
                     {/* 로그아웃 */}
-                    {isLogged && <Nav.Link onClick={signout}>로그아웃</Nav.Link>}
+                    {isLogged && <Nav.Link onClick={signout} title="로그아웃">로그아웃</Nav.Link>}
                 </Nav>
                 </Navbar.Collapse>
                 </Container>

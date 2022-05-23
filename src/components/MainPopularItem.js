@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import styles from "./MainPopularItem.module.css";
 
 // styled-components
 const ShoesTitle = styled.h4`
@@ -24,8 +25,13 @@ function MainPopularItem({shoes, idx}) {
             {
                 idx < 21 
                 ? (
-                    <div className="col-md-4 populars" onClick={() => {navigate(`/detail/${shoes.id}`)}}>
-                        <img src={`https://raw.githubusercontent.com/younggwons/younggwons.github.io/master/item/shoes${idx}.jpg`} width="80%" height="190px" />
+                    <div className="col-md-4 populars" onClick={() => {navigate(`/detail/${shoes.id}`)}} id={styles.MainPopularItemDiv}>
+                        <img 
+                            src={`https://raw.githubusercontent.com/younggwons/younggwons.github.io/master/item/shoes${idx}.jpg`} 
+                            width="80%" 
+                            height="190px" 
+                            className={styles.itemImage}
+                        />
                         <ShoesTitle>{shoes.title}</ShoesTitle>
                         <ShoesContent>{shoes.content}</ShoesContent>
                         <ShoesPrice>{shoes.price}원</ShoesPrice>

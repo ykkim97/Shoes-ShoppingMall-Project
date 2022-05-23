@@ -35,8 +35,10 @@ function Home({popularShoes, isLogged, setIsLogged}) {
             {
                 !visible && 
                 (<div className={styles["another-item"]}>
-                    <Button variant="primary" onClick={() => {setVisible(true)}}>다른 상품보기</Button>{' '}
-                    {/* <ul></ul> */}
+                    <button 
+                        className={`${styles.customBtn} ${styles.anotherClickButton}`} 
+                        onClick={() => {setVisible(true)}}
+                    >다른상품 보기</button>{' '}
                 </div>)
             }
 
