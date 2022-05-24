@@ -3,6 +3,8 @@ import Footer from "../components/Footer";
 import MainNavbar from "../components/MainNavbar";
 import MainPopularItem from "../components/MainPopularItem";
 import styles from "./ManShoes.module.css";
+import { database } from "../firebase";
+
 
 function ManShoes({popularShoes, isLogged, setIsLogged, ax}) {
     const count = [0];
@@ -20,7 +22,7 @@ function ManShoes({popularShoes, isLogged, setIsLogged, ax}) {
                                 return (
                                     <MainPopularItem shoes={shoes} key={idx} idx={idx} />
                                 )
-                            } 
+                            }
                         })}
                     </div>
                 </div>

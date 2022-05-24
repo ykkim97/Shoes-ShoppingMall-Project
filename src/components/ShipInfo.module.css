@@ -22,5 +22,10 @@
 
 .table-frame td { 
     border: 1px solid rgb(160, 157, 157);
-    padding-left: 20px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.itemKey {
+    background: rgb(236, 233, 233);
 }

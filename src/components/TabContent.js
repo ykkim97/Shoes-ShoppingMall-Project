@@ -6,8 +6,7 @@ import ShipInfo from "./ShipInfo";
 // 상품상세 , 상품평 , 배송안내 Part
 function TabContent({tabs}) {
     if (tabs === 0) return <div><DetailTab /></div>
-    else if (tabs === 1) return <div>리뷰</div>
-    else if (tabs === 2) return <div><ShipInfo /></div>
+    else if (tabs === 1) return <div><ShipInfo /></div>
 }
 
 export default TabContent;  

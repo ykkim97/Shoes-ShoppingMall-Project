@@ -15,9 +15,8 @@ function Cart({isLogged, setIsLogged}) {
     const state = useSelector((state) => state.basketReducer);
     const alertState = useSelector((state) => state.basketAlertReducer);
     
-    const navigate = useNavigate();
     const dispatch = useDispatch();
-
+    const navigate = useNavigate();
 
     return (
         <>

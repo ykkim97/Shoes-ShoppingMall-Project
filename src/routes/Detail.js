@@ -65,10 +65,10 @@ function Detail({popularShoes,setPopularShoes,isLogged,setIsLogged}) {
     return (
         <>
             <MainNavbar isLogged={isLogged} setIsLogged={setIsLogged}/>
-            <GreyBox>
+            {/* <GreyBox>
                 <h3>신규 고객 대상 30% 할인 쿠폰 증정</h3>
                 <Btn bg="yellow">쿠폰발급받기</Btn>
-            </GreyBox>
+            </GreyBox> */}
             <h1 className={styles.detailInfoTitle}>상품 정보</h1>
 
             <div className="container">
@@ -105,11 +105,11 @@ function Detail({popularShoes,setPopularShoes,isLogged,setIsLogged}) {
                     <Nav.Item>
                         <Nav.Link eventKey="link-0" onClick={() => {setTabs(0)}}>상품상세</Nav.Link>
                     </Nav.Item>
-                    <Nav.Item>
+                    {/* <Nav.Item>
                         <Nav.Link eventKey="link-1" onClick={() => {setTabs(1)}}>상품평</Nav.Link>
-                    </Nav.Item>
+                    </Nav.Item> */}
                     <Nav.Item>
-                        <Nav.Link eventKey="link-2" onClick={() => {setTabs(2)}}>배송/교환/반품 안내</Nav.Link>
+                        <Nav.Link eventKey="link-1" onClick={() => {setTabs(1)}}>배송/교환/반품 안내</Nav.Link>
                     </Nav.Item>
                 </Nav>
                 
