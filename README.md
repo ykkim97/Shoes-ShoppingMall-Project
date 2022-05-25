@@ -18,7 +18,7 @@
 
 ## 구현 기능
 ### 메인 페이지
-https://user-images.githubusercontent.com/17917009/170271423-6db5afce-79e8-4dc2-a58d-5eddd97b4149.mp4
+<img sre="https://user-images.githubusercontent.com/17917009/170271423-6db5afce-79e8-4dc2-a58d-5eddd97b4149.mp4">
 사용자가 처음 보게 되는 메인 페이지입니다. 메인 페이지에는 광고나 제품 이미지가 들어갈 수 있는 슬라이더 배너(캐러셀)이 위치해 있고 그 밑에는 본 쇼핑몰의 인기 상품이 배치되어 있습니다.
 
 
