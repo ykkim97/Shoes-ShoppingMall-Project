@@ -19,10 +19,12 @@
 ## 구현 기능
 ### 메인 페이지
 
-<img src="https://user-images.githubusercontent.com/17917009/170274217-ef862e00-3c38-43aa-9310-4b230810d49e.gif">
+<img src="https://user-images.githubusercontent.com/17917009/170274217-ef862e00-3c38-43aa-9310-4b230810d49e.gif" style="text-align : center">
 사용자가 처음 보게 되는 메인 페이지입니다. 메인 페이지에는 광고나 제품 이미지가 들어갈 수 있는 슬라이더 배너(캐러셀)이 위치해 있고 그 밑에는 본 쇼핑몰의 인기 상품이 배치되어 있습니다.
 
-
+### 카테고리 별 페이지
+<img src="https://user-images.githubusercontent.com/17917009/170276347-c347bde4-29d3-473e-a5f2-53249a1345c1.gif" style="text-align : center">
+카테고리 별 등록된 상품 목록을 확인할 수 있는 페이지입니다.  남성, 여성, 키즈로 구분지었고 각각 등록된 상품의 개수가 표시됩니다. 또한 라우팅을 이용하여 페이지가 새로고침되지 않고 모바일 앱처럼 부드럽게 전환됩니다.
 
 ## 느낀점
 
