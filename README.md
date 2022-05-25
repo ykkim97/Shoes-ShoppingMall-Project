@@ -31,11 +31,11 @@
 상품을 클릭하면 그 상품의 상세정보를 확인할 수 있는 페이지로 전환됩니다. 상세 페이지에서 상품 사진을 확인할 수있고 "장바구니 담기"버튼으로 장바구니에 추가할 수 있으며 "장바구니로"버튼을 클릭하면 장바구니 페이지로 이동할 수도 있습니다.
 
 ###  장바구니 기능
-<img src="https://user-images.githubusercontent.com/17917009/170281224-ee9f1d3a-17a1-4125-afe9-39bae61f391c.gif">
+<img src="https://user-images.githubusercontent.com/17917009/170284937-45a7dacb-476d-4f6d-a4ba-2dbfb423149d.gif">
 상세 페이지에서 "장바구니 담기" 버튼을 클릭하면 장바구니에 상품이 담기게 됩니다. 장바구니 페이지에서는 결제 전 장바구니에 등록된 상품을 확인하고 수량을 조절하고 필요하지 않은 경우 삭제할 수 있습니다. 또한 총 결제가격도 보여줍니다.
 
 ### 최근 본 상품 확인하기
-<img src="https://user-images.githubusercontent.com/17917009/170284402-be81f3cf-2b6a-4864-8700-524a55f5e6d3.gif">
+<img src="https://user-images.githubusercontent.com/17917009/170285112-07e8558e-4144-4c0d-a86e-82aa33af694a.gif">
 페이지 상단의 "최근 본 상품"탭을 클릭하면 최근 본 상품의 기록을 확인할 수 있는 페이지로 전환됩니다.
 
 
