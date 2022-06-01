@@ -65,12 +65,14 @@ function Detail({popularShoes,setPopularShoes,isLogged,setIsLogged}) {
     return (
         <>
             <MainNavbar isLogged={isLogged} setIsLogged={setIsLogged}/>
-            {/* <GreyBox>
+
+            {/*  쿠폰증정 광고창    
+            <GreyBox>
                 <h3>신규 고객 대상 30% 할인 쿠폰 증정</h3>
                 <Btn bg="yellow">쿠폰발급받기</Btn>
             </GreyBox> */}
-            <h1 className={styles.detailInfoTitle}>상품 정보</h1>
 
+            <h1 className={styles.detailInfoTitle}>상품 정보</h1>
             <div className="container">
                 <div className="row">
                     <div className="col-md-12 detailInfo">
@@ -79,7 +81,7 @@ function Detail({popularShoes,setPopularShoes,isLogged,setIsLogged}) {
                     <div className="col-md-12" id={styles.detailInfo}>
                         <h4 className="pt-5">{findItem.title}</h4>
                         <p>{findItem.content}</p>
-                        <p>{findItem.price}</p>
+                        <p id={styles.detailPrice}>판매가 : {findItem.price}원</p>
 
                         <button className="btn btn-primary" id={styles.putIn}
                             onClick={addBasket}

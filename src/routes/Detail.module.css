@@ -1,5 +1,4 @@
 .detailInfoTitle {
-    color: #504a4a;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -7,6 +6,11 @@
 
 #detailInfo {
     text-align: center;
+}
+
+#detailPrice {
+    font-weight: bold;
+    font-size: 20px;
 }
 
 #putIn,

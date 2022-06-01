@@ -104,7 +104,7 @@ function Cart({isLogged, setIsLogged}) {
                 </div>
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
         </>
     );
 }
